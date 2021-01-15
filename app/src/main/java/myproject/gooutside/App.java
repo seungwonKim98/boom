@@ -1,28 +1,7 @@
-package com.eomcs.pms;
+package myproject.gooutside;
 
 import java.sql.Date;
 import java.util.Scanner;
-
-// 1) 낱개의 변수를 사용하여 여러 회원 정보 처리하기
-// 2) 조건문을 사용하여 입출력 제어하기
-// - 필요한 만큼만 입력 받고 출력하고 싶다.
-// 3) 배열을 사용하여 여러 개의 값을 다루기
-// - 배열을 사용하면 간단하게 여러 개의 변수를 선언할 수 있다.
-// 4) 반복문을 사용하여 여러 개의 값을 다루기
-// - 반복문을 사용하면 같은 코드를 중복해서 작성할 필요가 없다.
-// 5) 배열 개수를 변수에서 관리하기
-// - 변수의 값만 바꾸면 배열 개수를 바로 변경할 수 있어 편하다.
-// 6) 상수를 사용하여 초기 값을 변경하지 못하게 막기
-// - 변수는 중간에 값을 바꿀 수 있기 때문에 값을 바꾸지 말아야 하는 경우
-//   상수로 선언한다.
-
-/* 
-명령> /member/list
-[회원 목록]
-명령> /member/add
-[회원 등록]
-명령> /project/add
- */
 
 
 public class App {
@@ -30,35 +9,39 @@ public class App {
   public static void main(String[] args) {
     Scanner keyboardScan = new Scanner(System.in);
 
+
     // 회원 데이터
     final int LENGTH = 100;
-    int[] no = new int[LENGTH];
-    String[] name = new String[LENGTH];
-    String[] email = new String[LENGTH];
-    String[] password = new String[LENGTH];
-    String[] photo = new String[LENGTH];
-    String[] tel = new String[LENGTH];
-    Date[] registeredDate = new Date[LENGTH];
+    int[] no = new int[LENGTH]; // 회원 번호 
+    String[] name = new String[LENGTH]; // 회원 이름
+    String[] email = new String[LENGTH]; // 이메일
+    String[] password = new String[LENGTH]; // 비밀 번호
+    String[] tel = new String[LENGTH]; // 전화 번호
+    Date[] registeredDate = new Date[LENGTH]; // 가입일
     int size = 0;
 
-    // 프로젝트 데이터
-    int[] pno = new int[LENGTH];
-    String[] ptitle = new String[LENGTH];
-    String[] pcontent = new String[LENGTH];
-    Date[] pstartDate = new Date[LENGTH];
-    Date[] pendDate = new Date[LENGTH];
-    String[] powner = new String[LENGTH];
-    String[] pmembers = new String[LENGTH];
-    int psize = 0;
+    // 공지 데이터
+    int[] nno = new int[LENGTH]; // 게시글 번호
+    String[] ntitle = new String[LENGTH]; // 글 제목
+    String[] ncontent = new String[LENGTH]; // 글 내용
+    String[] nname = new String[LENGTH]; // 작성자 이름
+    Date[] nDate = new Date[LENGTH]; // 작성일 
 
-    // 작업 데이터
+    int nsize = 0;
 
-    int[] tno = new int[LENGTH];
-    String[] tcontent = new String[LENGTH];
-    Date[] tdeadline = new Date[LENGTH];
-    String[] towner = new String[LENGTH];
-    int[] tstatus = new int[LENGTH];    
-    int tsize = 0;
+    // 커뮤니티 데이터
+
+    int[] cno = new int[LENGTH]; // 게시글 번호
+    String[] cplace = new String[LENGTH]; // 장소 
+    String[] ctitle = new String[LENGTH]; // 제목
+    String[] ccontent = new String[LENGTH]; // 게시글 내용
+    String[] npassword = new String[LENGTH]; // 암호
+    String[] cname = new String[LENGTH]; // 작성자 
+    Date[] cdate = new Date[LENGTH]; // 작성일
+
+    // int[] cstatus = new int[LENGTH]; //  상태 
+
+    int csize = 0;
 
 
 
@@ -85,9 +68,6 @@ public class App {
 
         System.out.print("암호? ");
         password[size] = keyboardScan.nextLine();
-
-        System.out.print("사진? ");
-        photo[size] = keyboardScan.nextLine();
 
         System.out.print("전화? ");
         tel[size] = keyboardScan.nextLine();
