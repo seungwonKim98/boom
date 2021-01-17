@@ -20,10 +20,13 @@
 번호 / 제목 / 내용 / 작성자 / 작성일 
 
 ---------------------------
-community add/ list
+// review add/ list
 
 번호 / 장소 / 내용 / 암호 / 작성자 /작성일 /평점
 
+d d s s s s s
+
+some projects cannot be imported because they already exist in the workspace
 
  
 
